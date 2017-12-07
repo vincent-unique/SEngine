@@ -1,7 +1,13 @@
 package org.trump.vincent.filter;
 
+import java.io.File;
+
 /**
  * Created by Vincent on 2017/12/4 0004.
  */
-public class PDFFileFilter {
+public class PDFFileFilter extends FileFilter {
+
+    public boolean accept(File file){
+        return accept(file,".pdf");
+    }
 }
