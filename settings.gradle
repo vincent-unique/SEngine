@@ -1,3 +1,5 @@
 rootProject.name = 'SEngine'
 include 'lucene'
+include 'solr'
+include 'elasticsearch'
 
