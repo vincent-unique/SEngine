@@ -110,7 +110,7 @@ public class LuceneWriter {
     public boolean deleteAll(){
         try {
             this.writer.deleteAll();
-            this.writer.commit();
+//            this.writer.commit();
             return true;
         }catch (IOException e){
             logger.error("Exception occurs in deleting Lucene index.");
