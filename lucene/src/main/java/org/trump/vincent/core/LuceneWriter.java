@@ -55,7 +55,8 @@ public class LuceneWriter {
     public boolean index(Document document){
         try{
             this.writer.addDocument(document);
-            this.writer.commit();
+            // commit statement is unrequired to the lucene IndexWriter
+//            this.writer.commit();
             return true;
         }catch (IOException e){
             logger.error("Exception occurs in writing lucene document.");
@@ -66,7 +67,7 @@ public class LuceneWriter {
     public Integer index(Collection<Document> document){
         try{
             this.writer.addDocuments(document);
-            this.writer.commit();
+//            this.writer.commit();
             return this.writer.numDocs();
         }catch (IOException e){
             logger.error("Exception occurs in writing lucene document.");
@@ -77,7 +78,7 @@ public class LuceneWriter {
     public boolean update(Document document, Term term){
         try {
             this.writer.updateDocument(term, document);
-            this.writer.commit();
+//            this.writer.commit();
             return true;
         }catch (IOException e){
             logger.error("Exception occurs in updating lucene document.");
