@@ -88,7 +88,7 @@ public class LuceneWriter {
     public boolean update(Collection<Document> documents, Term term){
         try {
             this.writer.updateDocuments(term,documents);
-            this.writer.commit();
+//            this.writer.commit();
             return true;
         }catch (IOException e){
             logger.error("Exception occurs in updating lucene document.");
@@ -99,7 +99,7 @@ public class LuceneWriter {
     public boolean delete(Term ...terms){
         try {
             this.writer.deleteDocuments(terms);
-            this.writer.commit();
+//            this.writer.commit();
             return true;
         }catch (IOException e){
             logger.error("Exception occurs in deleting Lucene index.");
