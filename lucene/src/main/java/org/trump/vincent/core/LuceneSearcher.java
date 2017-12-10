@@ -50,6 +50,11 @@ public class LuceneSearcher {
         return null;
     }
 
+    public void deleteByQuery(Term term,String indexDir)throws IOException{
+        IndexReader indexReader = IndexReader.open(FSDirectory.open(new File(indexDir)));
+        indexReader.deleteDocuments(term);
+    }
+    
     public TopDocs query(Query query, Integer limit)throws IOException{
         if(query!=null){
             return this.searcher.search(query,limit!=null&&limit>0?limit: LuceneConstants.MAX_SEARCH);
